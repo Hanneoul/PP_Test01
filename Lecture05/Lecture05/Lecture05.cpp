@@ -3,6 +3,10 @@
 #include <conio.h>
 #include <Windows.h>
 
+char** map = NULL;
+int stage_width = 15;
+int stage_height = 15;
+
 // game_state == 0 일때
 int print_title_screen()
 {
@@ -33,11 +37,58 @@ void gotoxy(int x, int y) {
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 }
 
-int print_game_screen(int stage_width, int stage_height)
-{
-    gotoxy(5, 5);
 
-    std::cout << "^^";
+
+int InitMap()
+{
+    if (map == NULL)
+    {
+        map = new char*[stage_height];
+
+        for (int i = 0; i < stage_height; i++)
+        {
+            map[i] = new char[stage_width];
+        }
+    }
+    return 0;
+}
+
+int ReleaseMap()
+{
+    for (int i = 0; i < stage_height; i++)
+    {
+        delete[] map[i];
+    }
+
+    delete[] * map;
+    return 0;
+}
+
+int print_game_screen()
+{
+    if (map == NULL)
+    {
+        InitMap();
+    }
+
+    gotoxy(0, 0);
+
+    for (int j = 0; j < stage_height + 2; j++)
+    {
+        for (int i = 0; i < stage_width + 2; i++)
+        {
+            if(i>1 || i< stage_width +1)
+                printf(" ");
+            else
+                printf("#");
+        }
+        printf("\n");
+    }
+
+
+    
+
+    
     
 
 
@@ -87,8 +138,9 @@ int main()
             }
             break;
         case 1:
-            print_game_screen(10,10);
+            print_game_screen();
             key_input = _getch();
+            break;
         case 2:
             print_introduction_screen();
             key_input = _getch();
@@ -109,6 +161,11 @@ int main()
         }     
         
         
+    }
+
+    if (map != NULL)
+    {
+        ReleaseMap();
     }
 
     return 0;
