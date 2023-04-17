@@ -41,9 +41,9 @@ void gotoxy(int x, int y) {
 
 int InitMap()
 {
-    if (map == NULL)
+    if (map == nullptr)
     {
-        map = new char*[stage_height];
+        map = (char**)malloc(sizeof(char*) * stage)
 
         for (int i = 0; i < stage_height; i++)
         {
@@ -105,9 +105,63 @@ int print_introduction_screen()
 
 int main()
 {
+    /*
+     * GameState
+     * 0 : 게임 종료
+     * 1 : 시작 화면
+     * 2 : 게임 설명
+     * 3 : 게임 랭킹
+     */
 
-    int game_state = 0;
-    int is_game_running = 1;
+    int game_state = 1;
+
+    InitMap();
+
+    while (game_state)
+    {
+        switch (game_state)
+        {
+        case 0:
+            
+            break;
+        case 1:
+            print_title_screen();
+            int sub_title_state = 1;
+            while (sub_title_state)
+            {
+                char key_input = _getch();
+                switch(key_input)
+                {
+                case 0:
+                    game_state = 0;
+                    break;
+                case 1:
+                    game_state = 1;
+                    break;
+                case 2:
+                    game_state = 2;
+                    break;
+                case 3:
+                    game_state = 3;
+                   break;
+                default:
+                    break;
+                }
+            }
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        default:
+            break;
+        }
+    }
+
+    return 0;
+}
+/*
+    
 
     while (is_game_running)
     {   
@@ -170,3 +224,4 @@ int main()
 
     return 0;
 }
+*/
