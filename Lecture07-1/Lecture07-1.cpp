@@ -34,7 +34,7 @@ public:
 	~IPhone()
 	{
 		cout << "IPhone을 소멸시킵니다" << endl;
-		~MobilePhone();
+		
 	}
 
 	void ApplePay()
@@ -91,10 +91,12 @@ void main()
 	for (size_t i = 0; i < 2; i++)
 	{
 		mp[i]->TurnOn();
-	
+		delete(mp[i]);
 	}
 
-	delete(*mp);
+	
+	
+	
 	
 	
 
