@@ -1,6 +1,6 @@
 #pragma once // #define _IS_THIS_HEADER_INCLUDED
 
-#define Key_Exit 27
+#define Key_ESC 27
 #define Key_RIGHT 'd'
 #define Key_LEFT 'a'
 #define Key_ENTER 13
@@ -92,7 +92,7 @@ namespace MuSoeun
 			 *	한번 눌렀을땐 일시정지 
 			 *  두번 눌렀을땐 게임 종료
 			 */
-			case Key_Exit:
+			case Key_ESC:
 				isGameRunning = false;
 				//24일 8주차 과제
 
