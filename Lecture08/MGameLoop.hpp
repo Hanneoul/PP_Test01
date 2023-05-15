@@ -16,9 +16,9 @@
 namespace MuSoeun
 {
 	void gotoxy(int x, int y) {
-		//x, y ÁÂÇ¥ ¼³Á¤
+		//x, y ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½
 		COORD pos = { x,y };
-		//Ä¿¼­ ÀÌµ¿
+		//Ä¿ï¿½ï¿½ ï¿½Ìµï¿½
 		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 	}
 
@@ -35,19 +35,19 @@ namespace MuSoeun
 		{
 			isGameRunning = true;
 			gotoxy(0, 10);
-			std::cout << ANSI_COLOR_MAGENTA "ÃÊ±âÈ­ ¿Ï·á" << std::endl;
+			std::cout << ANSI_COLOR_MAGENTA "ï¿½Ê±ï¿½È­ ï¿½Ï·ï¿½" << std::endl;
 		}
 
 		void Release()
 		{
 			gotoxy(0, 10);
-			std::cout << ANSI_COLOR_MAGENTA "½Ã½ºÅÛ ÇØÁ¦ ¿Ï·á" << std::endl;
+			std::cout << ANSI_COLOR_MAGENTA "ï¿½Ã½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½" << std::endl;
 		}
 
 		void Update()
 		{
 			gotoxy(0, 10);
-			std::cout << ANSI_COLOR_MAGENTA "¾÷µ¥ÀÌÆ®Áß ¿Ï·á" << std::endl;
+			std::cout << ANSI_COLOR_MAGENTA "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ï·ï¿½" << std::endl;
 			if (_kbhit())
 			{
 				
@@ -58,7 +58,7 @@ namespace MuSoeun
 		void Render()
 		{
 			gotoxy(0, 10);
-			std::cout << ANSI_COLOR_MAGENTA "·»´õ¸µ ¿Ï·á" << std::endl;
+			std::cout << ANSI_COLOR_MAGENTA "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½" << std::endl;
 		}
 
 		void Run()
@@ -80,25 +80,25 @@ namespace MuSoeun
 			int a, b;
 			switch (KeyInput)
 			{
-			case Key_LEFT:	//¿ÞÂÊ È­»ìÇ¥Å°
+			case Key_LEFT:	//ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½Ç¥Å°
 				gotoxy(2, 5);
-				std::cout << ANSI_COLOR_YELLOW"¿ÞÂÊÀÌ ´­·È´Ù!  " << std::endl;
+				std::cout << ANSI_COLOR_YELLOW"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½È´ï¿½!  " << std::endl;
 				break;
-			case Key_RIGHT:	//¿À¸¥ÂÊ È­»ìÇ¥Å°
+			case Key_RIGHT:	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½Ç¥Å°
 				gotoxy(2, 5);
-				std::cout << ANSI_COLOR_YELLOW"¿À¸¥ÂÊÀÌ ´­·È´Ù!" << std::endl;
+				std::cout << ANSI_COLOR_YELLOW"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½È´ï¿½!" << std::endl;
 				break;
-			/* 27 : esc °í °ÔÀÓ Á¾·áÅ° ÀÔ´Ï´Ù.
-			 *	ÇÑ¹ø ´­·¶À»¶© ÀÏ½ÃÁ¤Áö 
-			 *  µÎ¹ø ´­·¶À»¶© °ÔÀÓ Á¾·á
+			/* 27 : esc ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å° ï¿½Ô´Ï´ï¿½.
+			 *	ï¿½Ñ¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+			 *  ï¿½Î¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			 */
 			case Key_ESC:
 				isGameRunning = false;
-				//24ÀÏ 8ÁÖÂ÷ °úÁ¦
+				//24ï¿½ï¿½ 8ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 			case Key_ENTER:
 				gotoxy(2, 5);
-				std::cout << ANSI_COLOR_YELLOW"¿£ÅÍ°¡ ´­·È´Ù!  " << std::endl;
+				std::cout << ANSI_COLOR_YELLOW"ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½È´ï¿½!  " << std::endl;
 				break;
 			default:
 				gotoxy(2, 5);

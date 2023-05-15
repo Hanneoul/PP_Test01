@@ -19,9 +19,9 @@
 namespace MuSoeun 
 {
 	void gotoxy(int x, int y) {
-		//x, y ÁÂÇ¥ ¼³Á¤
+		//x, y ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½
 		COORD pos = { x,y };
-		//Ä¿¼­ ÀÌµ¿
+		//Ä¿ï¿½ï¿½ ï¿½Ìµï¿½
 		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 	}
 
@@ -47,18 +47,18 @@ namespace MuSoeun
 			SetCursorState(false);
 
 			gotoxy(3, 15);
-			std::cout << ANSI_COLOR_RESET"°ÔÀÓ ÃÊ±âÈ­Áß" << std::endl;
+			std::cout << ANSI_COLOR_RESET"ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­ï¿½ï¿½" << std::endl;
 			isGameRunning = true;
 		}
 		void Release() 
 		{
 			gotoxy(3, 18);
-			std::cout << ANSI_COLOR_RESET"°ÔÀÓ Á¾·áÁß" << std::endl;
+			std::cout << ANSI_COLOR_RESET"ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << std::endl;
 		}
 		void Update()
 		{
 			gotoxy(3, 16);
-			std::cout << ANSI_COLOR_RESET"°ÔÀÓ Å°ÀÔ·Â ´ë±â" << std::endl;
+			std::cout << ANSI_COLOR_RESET"ï¿½ï¿½ï¿½ï¿½ Å°ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½" << std::endl;
 			if (_kbhit())
 			{
 				KeyEvent(_getch());					
@@ -67,7 +67,7 @@ namespace MuSoeun
 		void Render()
 		{
 			gotoxy(3, 17);
-			std::cout << ANSI_COLOR_RESET"°ÔÀÓ È­¸é ±×¸®±â" << std::endl;
+			std::cout << ANSI_COLOR_RESET"ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½ ï¿½×¸ï¿½ï¿½ï¿½" << std::endl;
 		}
 		
 
@@ -87,23 +87,23 @@ namespace MuSoeun
 		{
 			switch (KeyInput)
 			{
-			/* ÇÑ¹ø ESC´©¸£¸é ÀÏ½Ã Á¤Áö°¡ µÇ°í
-			 * ¿©±â¼­ ³ª°¡±â¸¦ ¼±ÅÃÇÏ¸é ³ª°¡Áø´Ù			 * 
+			/* ï¿½Ñ¹ï¿½ ESCï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç°ï¿½
+			 * ï¿½ï¿½ï¿½â¼­ ï¿½ï¿½ï¿½ï¿½ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½			 * 
 			 */
 			case KEY_ESC:	
 				isGameRunning = false;
 				break;
 			case KEY_LEFT:
 				gotoxy(5, 5);
-				std::cout << ANSI_COLOR_RED"¿ÞÂÊ ´­¸²  " << std::endl;
+				std::cout << ANSI_COLOR_RED"ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½  " << std::endl;
 				break;
 			case KEY_RIGHT:
 				gotoxy(5, 5);
-				std::cout << ANSI_COLOR_GREEN"¿À¸¥ÂÊ ´­¸²" << std::endl;
+				std::cout << ANSI_COLOR_GREEN"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½" << std::endl;
 				break;
 			case KEY_ENTER:
 				gotoxy(5, 5);
-				std::cout << ANSI_COLOR_BLUE"¿£ÅÍ ´­¸²  " << std::endl;
+				std::cout << ANSI_COLOR_BLUE"ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½  " << std::endl;
 				break;
 			default:
 				isGameRunning = true;
