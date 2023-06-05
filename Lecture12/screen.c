@@ -12,9 +12,18 @@ void setScreenSize(int width, int height)
 
 void setCursorPos(int x, int y)
 {
-	/* °¡·Î 74 ¼¼·Î 22*/
+	/* ï¿½ï¿½ï¿½ï¿½ 74 ï¿½ï¿½ï¿½ï¿½ 22*/
 	COORD pos = { x,y };
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
+}
+
+
+void setCursorVisibility(int isVisible)
+{
+	CONSOLE_CURSOR_INFO cursorInfo;
+	cursorInfo.bVisible = isVisible;
+	cursorInfo.dwSize = 1;
+	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursorInfo);
 }
 
 void SetColor(unsigned short backgroundColor, unsigned short textColor)

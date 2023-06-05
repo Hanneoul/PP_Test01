@@ -4,7 +4,7 @@ void CHECKERROR(int e)
 {
 	if (e == 1)
 	{
-		printf("\n[line:%d, %s] ¿¡·¯°¡ ¹ß»ýÇÏ¿´½À´Ï´Ù.\n", __LINE__, __func__);
+		printf("\n[line:%d, %s] ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.\n", __LINE__, __func__);
 		exit(1);
 	}
 }
