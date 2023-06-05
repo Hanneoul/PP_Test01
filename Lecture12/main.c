@@ -8,8 +8,6 @@ int Initialize();
 int Release();
 int DrawBuffer(int DeltaTime);
 
-
-
 //게임스테이트가 0일때 무조건 게임 종료
 int GameState;
 int GameStartSnakeLength;
