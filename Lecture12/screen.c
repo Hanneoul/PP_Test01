@@ -20,6 +20,7 @@ void setCursorIcon(int isActive)
 {
 	CONSOLE_CURSOR_INFO cursorInfo;
 	cursorInfo.bVisible = isActive;
+	cursorInfo.dwSize = 1;
 	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursorInfo);
 }
 
